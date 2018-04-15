@@ -14,6 +14,11 @@ class App extends Component {
             <h1> Git Commands </h1>
           </Link>
         </Card>
+        <Card>
+          <Link to="/heroku">
+            <h1> Heroku Commands </h1>
+          </Link>
+        </Card>
       </div>
     );
   }
