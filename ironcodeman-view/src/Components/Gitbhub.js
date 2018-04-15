@@ -26,11 +26,9 @@ export default class Github extends Component {
         this.state.gitDelete.push(GitHubData[i]);
       }
     }
-    // might only have to update one state and push directly to state
+
     this.setState({ 
       gitIntro: gitArr,
-     // gitRemote: remoteArr,
-     // gitFetch::  
     });
   }
   render() {

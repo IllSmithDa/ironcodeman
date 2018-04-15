@@ -1,7 +1,7 @@
 const HerokuData = [
   { 
     type: "Heroku Intro",
-    command: "'heroku login",
+    command: "heroku login",
     description: "login to heroku account. Prepare to give username and password" 
   },
   {
