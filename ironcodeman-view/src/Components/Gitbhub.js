@@ -1,20 +1,149 @@
 import React, { Component } from 'react';
-
+import { Table } from 'reactstrap';
+import GitHubData from '../Data/GitHubData'
+import '../../node_modules/bootstrap/dist/css/bootstrap.css';
+import '../CSS/Github.css';
 export default class Github extends Component {
-
+  constructor() {
+    super();
+    this.state = {
+      gitIntro: [],
+      gitRemote: [],
+      gitFetch: [],
+      gitDelete: [],
+    }
+  }
+  componentDidMount() {
+    const gitArr = [];
+    for (let i = 0; i < GitHubData.length; i += 1) {
+      if (GitHubData[i].type === "Git Intro") {
+        gitArr.push(GitHubData[i]);
+      } else if (GitHubData[i].type === "Git Remote") {
+        this.state.gitRemote.push(GitHubData[i])
+      } else if (GitHubData[i].type === "Git Sync") {
+        this.state.gitFetch.push(GitHubData[i]);
+      } else if (GitHubData[i].type === "Git Remove") {
+        this.state.gitDelete.push(GitHubData[i]);
+      }
+    }
+    // might only have to update one state and push directly to state
+    this.setState({ 
+      gitIntro: gitArr,
+     // gitRemote: remoteArr,
+     // gitFetch::  
+    });
+  }
   render() {
+    const gitIntro = this.state.gitIntro;
+    const gitRemote = this.state.gitRemote;
+    const gitFetch = this.state.gitFetch;
+    const gitDelete = this.state.gitDelete;
     return(
       <div>
-        <h1>Github</h1>
-          <h2> Github Set Up </h2>
-          <ul>
-            <li>git init - sets current local directory as a Git Repository</li>
-            <li>git add . - adds files in local directory for commit</li>
-            <li>git reset HEAD FileName - undo a git add for the file 'FileName' </li>
-            <li>git commit -m "Comment here" - commits the files to be pushed to Github repository</li>
-            <li>git push origin master - push files to the Github repo under the branch name 'master' </li>
-          </ul>
+        <div className="Github-title-container">
+          <h1>Git</h1>
+        </div>
+          <div className="Github-table-container">
+            <div className="Github-table-header">
+              <h3>Git basic commands</h3>
+            </div>
+            <Table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th><b>Command</b></th>
+                  <th><b>Description</b></th>
+                </tr>
+              </thead>
+              <tbody>
+                {gitIntro.map((post, index) => 
+                  (
+                    <tr key={post.description}>
+                      <th scope="row">{index + 1}</th>
+                      <th>{post.command}</th>
+                      <th>{post.description}</th>
+                    </tr>
+                  )
+                )}
+              </tbody>
+            </Table>
+          </div>
+          <div className="Github-table-container">
+            <div className="Github-table-header">
+              <h3>Git Remote Setup commands</h3>
+            </div>
+            <Table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th><b>Command</b></th>
+                  <th><b>Description</b></th>
+                </tr>
+              </thead>
+              <tbody>
+                {gitRemote.map((post, index) => 
+                  (
+                    <tr key={post.description}>
+                      <th scope="row">{index + 1}</th>
+                      <th>{post.command}</th>
+                      <th>{post.description}</th>
+                    </tr>
+                  )
+                )}
+              </tbody>
+            </Table>
+          </div>
+          <div className="Github-table-container">
+            <div className="Github-table-header">
+              <h3>Syncing your local project with a Github Repository</h3>
+            </div>
+            <Table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th><b>Command</b></th>
+                  <th><b>Description</b></th>
+                </tr>
+              </thead>
+              <tbody>
+                {gitFetch.map((post, index) => 
+                  (
+                    <tr key={post.description}>
+                      <th scope="row">{index + 1}</th>
+                      <th>{post.command}</th>
+                      <th>{post.description}</th>
+                    </tr>
+                  )
+                )}
+              </tbody>
+            </Table>
+          </div>
+          <div className="Github-table-container">
+            <div className="Github-table-header">
+              <h3>Git Delete Commands</h3>
+            </div>
+            <Table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th><b>Command</b></th>
+                  <th><b>Description</b></th>
+                </tr>
+              </thead>
+              <tbody>
+                {gitDelete.map((post, index) => 
+                  (
+                    <tr key={post.description}>
+                      <th scope="row">{index + 1}</th>
+                      <th>{post.command}</th>
+                      <th>{post.description}</th>
+                    </tr>
+                  )
+                )}
+              </tbody>
+            </Table>
+          </div>
       </div>
-    )
+    );
   }
 }

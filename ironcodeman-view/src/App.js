@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
+import { Card, CardHeader, CardText, CardBody } from 'reactstrap';
+import { Link } from 'react-router-dom';
+import GitHub from './Components/Gitbhub'
 import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">IronCodeMan</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <Card>
+          <Link to="/github">
+            <h1> Git Commands </h1>
+          </Link>
+        </Card>
       </div>
     );
   }
