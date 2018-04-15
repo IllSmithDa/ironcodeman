@@ -8,6 +8,9 @@ export default class Django extends Component {
     super();
     this.state = {
       djangoIntro: [],
+      djangoDatabase: [],
+      djangoShell: [],
+      djangoHeroku: [],
     }
   }
   componentDidMount() {
@@ -15,7 +18,13 @@ export default class Django extends Component {
     for (let i = 0; i < DjangoData.length; i += 1) {
       if (DjangoData[i].type === "Django Intro") {
         djangoArr.push(DjangoData[i]);
-      } 
+      } else if (DjangoData[i].type === "Django Database") {
+        this.state.djangoDatabase.push(DjangoData[i]);
+      } else if (DjangoData[i].type === "Django Shell") {
+        this.state.djangoShell.push(DjangoData[i]);
+      } else if (DjangoData[i].type === "Django Heroku") {
+        this.state.djangoHeroku.push(DjangoData[i]);
+      }
     }
 
     this.setState({ 
@@ -24,6 +33,9 @@ export default class Django extends Component {
   }
   render() {
     const djangoArr = this.state.djangoIntro;
+    const dataArr = this.state.djangoDatabase;
+    const shellArr = this.state.djangoShell;
+    const herokuArr = this.state.djangoHeroku;
     return(
       <div>
         <div className="Github-title-container">
@@ -47,6 +59,81 @@ export default class Django extends Component {
               </thead>
               <tbody>
                 {djangoArr.map((post, index) => 
+                  (
+                    <tr key={post.description}>
+                      <th scope="row">{index + 1}</th>
+                      <th>{post.command}</th>
+                      <th>{post.description}</th>
+                    </tr>
+                  )
+                )}
+              </tbody>
+            </Table>
+          </div>
+          <div className="Github-table-container">
+            <div className="Github-table-header">
+              <h3>Django Database Commands</h3>
+            </div>
+            <Table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th><b>Command</b></th>
+                  <th><b>Description</b></th>
+                </tr>
+              </thead>
+              <tbody>
+                {dataArr.map((post, index) => 
+                  (
+                    <tr key={post.description}>
+                      <th scope="row">{index + 1}</th>
+                      <th>{post.command}</th>
+                      <th>{post.description}</th>
+                    </tr>
+                  )
+                )}
+              </tbody>
+            </Table>
+          </div>
+          <div className="Github-table-container">
+            <div className="Github-table-header">
+              <h3>Django Shell Commands</h3>
+            </div>
+            <Table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th><b>Command</b></th>
+                  <th><b>Description</b></th>
+                </tr>
+              </thead>
+              <tbody>
+                {shellArr.map((post, index) => 
+                  (
+                    <tr key={post.description}>
+                      <th scope="row">{index + 1}</th>
+                      <th>{post.command}</th>
+                      <th>{post.description}</th>
+                    </tr>
+                  )
+                )}
+              </tbody>
+            </Table>
+          </div>
+          <div className="Github-table-container">
+            <div className="Github-table-header">
+              <h3>Django + Heroku Commands</h3>
+            </div>
+            <Table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th><b>Command</b></th>
+                  <th><b>Description</b></th>
+                </tr>
+              </thead>
+              <tbody>
+                {herokuArr.map((post, index) => 
                   (
                     <tr key={post.description}>
                       <th scope="row">{index + 1}</th>
