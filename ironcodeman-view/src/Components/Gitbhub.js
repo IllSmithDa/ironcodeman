@@ -38,7 +38,7 @@ export default class Github extends Component {
     const gitFetch = this.state.gitFetch;
     const gitDelete = this.state.gitDelete;
     return(
-      <div>
+      <div className="Github">
         <Navbar />
         <div className="Github-title-container">
           <h1>Git</h1>
