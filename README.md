@@ -3,3 +3,10 @@
 
   The app also provides reviews on concepts specific to certain languages or computer science concepts like computer architecture,  data structures and much more. 
 
+# Technology
+  This app will consist of a React front end and may or may not contain a backend. At this time, the app is working with mostly static data so back end will probably not be necessary.
+
+# Liraries
+  List of Front end libaries include (using npm i): 
+  1. reactstrap - provides the cards and help format the pages into organized cards
+  2. react-router-dom - provides the routing setup necessary to nagivate within an application

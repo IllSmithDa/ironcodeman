@@ -6,6 +6,7 @@ import App from './App';
 import Github from './Components/Gitbhub';
 import Heroku from './Components/Heroku';
 import Django from './Components/Django';
+import Command from './Components/Command';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
@@ -15,6 +16,7 @@ ReactDOM.render(
     <Route path="/github" component={Github} />
     <Route path="/heroku" component={Heroku} />
     <Route path="/django" component={Django} />
+    <Route path="/command" component={Command} />
   </div>
 </Router>,
 document.getElementById('root'),
