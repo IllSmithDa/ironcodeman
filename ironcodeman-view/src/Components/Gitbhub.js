@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Table } from 'reactstrap';
 import GitHubData from '../Data/GitHubData'
+import Navbar from '../Components/Navbar';
 import '../../node_modules/bootstrap/dist/css/bootstrap.css';
 import '../CSS/Github.css';
 export default class Github extends Component {
@@ -38,6 +39,7 @@ export default class Github extends Component {
     const gitDelete = this.state.gitDelete;
     return(
       <div>
+        <Navbar />
         <div className="Github-title-container">
           <h1>Git</h1>
         </div>

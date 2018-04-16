@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Table } from 'reactstrap';
-import DjangoData from '../Data/DjangoData'
+import DjangoData from '../Data/DjangoData';
+import Navbar from '../Components/Navbar';
 import '../../node_modules/bootstrap/dist/css/bootstrap.css';
 import '../CSS/Github.css';
 export default class Django extends Component {
@@ -38,6 +39,7 @@ export default class Django extends Component {
     const herokuArr = this.state.djangoHeroku;
     return(
       <div>
+        <Navbar />
         <div className="Github-title-container">
           <h1>Django</h1>
         </div>

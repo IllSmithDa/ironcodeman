@@ -57,13 +57,13 @@ const CommandData = [
   },
   {
     type: "Command File Linux",
-    command: "find folderName -name fileName",
-    description: "looks in directory 'folderName' and searches for the file 'fileName"
+    command: "cp folderName folderName2",
+    description: "Copy directory folderName and its contents into the directory folderName2"
   },
   {
     type: "Command File Linux",
-    command: "cp folderName folderName2",
-    description: "Copy directory folderName and its contents into the directory folderName2"
+    command: "find folderName -name fileName",
+    description: "looks in directory 'folderName' and searches for the file 'fileName"
   },
   {
     type: "Command File Windows",

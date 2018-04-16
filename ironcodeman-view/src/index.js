@@ -13,7 +13,7 @@ ReactDOM.render(
   <Router>
   <div>
     <Route exact path="/" component={App} />
-    <Route path="/github" component={Github} />
+    <Route path="/git" component={Github} />
     <Route path="/heroku" component={Heroku} />
     <Route path="/django" component={Django} />
     <Route path="/command" component={Command} />

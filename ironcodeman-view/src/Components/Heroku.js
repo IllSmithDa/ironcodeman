@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Table } from 'reactstrap';
-import HerokuData from '../Data/HerokuData'
+import HerokuData from '../Data/HerokuData';
+import Navbar from '../Components/Navbar';
 import '../../node_modules/bootstrap/dist/css/bootstrap.css';
 import '../CSS/Github.css';
 export default class Github extends Component {
@@ -26,6 +27,7 @@ export default class Github extends Component {
     const herokuArr = this.state.herokuIntro;
     return(
       <div>
+        <Navbar />
         <div className="Github-title-container">
           <h1>Heroku</h1>
         </div>

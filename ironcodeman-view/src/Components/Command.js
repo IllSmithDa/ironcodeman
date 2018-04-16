@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Table } from 'reactstrap';
-import CommandData from '../Data/CommandData'
+import CommandData from '../Data/CommandData';
+import Navbar from '../Components/Navbar';
 import '../../node_modules/bootstrap/dist/css/bootstrap.css';
 import '../CSS/Github.css';
 export default class Command extends Component {
@@ -33,6 +34,7 @@ export default class Command extends Component {
     const commandWindow = this.state.commandWindow;
     return(
       <div>
+        <Navbar />  
         <div className="Github-title-container">
           <h1>Basic Command Lines</h1>
         </div>
